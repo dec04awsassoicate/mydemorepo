@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1aplpha1
+kind: Application
+metadata:
+        name: myapp-argo-application
+        namespace: argocd
+spec:
+   project: default
+  source:
+    repoURL: https://github.com/dec04awsassoicate/mydemorepo.git
+    targetRevision: HEAD
+    path: mydemorepo
+  destination:
+    server: http://192.168.56.2:31613/
+    namespace: myapp
+  syncpolicy:
+          syncOptions:
+                  - CreateNamespace=true
+          automated:
+                selfHeal: true
+                prune: true
