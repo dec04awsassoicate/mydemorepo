@@ -10,6 +10,6 @@ spec:
     targetRevision: HEAD
     path: mydemorepo
   destination:
-    server: http://192.168.56.2:31613/
+    server: https://kubernetes.default.svc
     namespace: myapp
   
